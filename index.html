@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A股技术分析三剑客 · 学习手册</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">📈</span>
+      <div>
+        <h1>三剑客学习手册</h1>
+        <p class="subtitle">道氏 · 斐波那契 · 缠论 · A股实战路线</p>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label">学习进度 <span id="progress-pct">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- 侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="week-group" data-week="1">
+        <div class="week-title">第 1 周 · 道氏基础</div>
+        <button class="lesson-btn active" data-lesson="1-1">1-1 三种趋势</button>
+        <button class="lesson-btn" data-lesson="1-2">1-2 高低点结构</button>
+        <button class="lesson-btn" data-lesson="1-3">1-3 牛熊判断</button>
+      </div>
+      <div class="week-group" data-week="2">
+        <div class="week-title">第 2 周 · 道氏实战</div>
+        <button class="lesson-btn" data-lesson="2-1">2-1 量价验证</button>
+        <button class="lesson-btn" data-lesson="2-2">2-2 趋势线画法</button>
+        <button class="lesson-btn" data-lesson="2-3">2-3 A股案例</button>
+      </div>
+      <div class="week-group" data-week="3">
+        <div class="week-title">第 3 周 · 斐波那契入门</div>
+        <button class="lesson-btn" data-lesson="3-1">3-1 黄金分割原理</button>
+        <button class="lesson-btn" data-lesson="3-2">3-2 四个核心回撤位</button>
+        <button class="lesson-btn" data-lesson="3-3">3-3 画线工具使用</button>
+      </div>
+      <div class="week-group" data-week="4">
+        <div class="week-title">第 4 周 · 斐波那契进阶</div>
+        <button class="lesson-btn" data-lesson="4-1">4-1 扩展位测量</button>
+        <button class="lesson-btn" data-lesson="4-2">4-2 时间窗口</button>
+        <button class="lesson-btn" data-lesson="4-3">4-3 实战复盘</button>
+      </div>
+      <div class="week-group" data-week="5">
+        <div class="week-title">第 5 周 · 缠论基础</div>
+        <button class="lesson-btn" data-lesson="5-1">5-1 分型识别</button>
+        <button class="lesson-btn" data-lesson="5-2">5-2 笔的画法</button>
+        <button class="lesson-btn" data-lesson="5-3">5-3 线段初识</button>
+      </div>
+      <div class="week-group" data-week="6">
+        <div class="week-title">第 6 周 · 缠论核心</div>
+        <button class="lesson-btn" data-lesson="6-1">6-1 中枢概念</button>
+        <button class="lesson-btn" data-lesson="6-2">6-2 三类买卖点</button>
+        <button class="lesson-btn" data-lesson="6-3">6-3 区间套</button>
+      </div>
+      <div class="week-group" data-week="7">
+        <div class="week-title">第 7 周 · 三剑合璧</div>
+        <button class="lesson-btn" data-lesson="7-1">7-1 联合作战模型</button>
+        <button class="lesson-btn" data-lesson="7-2">7-2 仓位管理</button>
+        <button class="lesson-btn" data-lesson="7-3">7-3 毕业复盘</button>
+      </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="content" id="content">
+      <!-- 内容由 JS 动态注入 -->
+    </main>
+  </div>
+
+  <!-- 底部笔记栏 -->
+  <div class="note-bar" id="note-bar">
+    <button class="note-toggle" id="note-toggle">📝 我的笔记</button>
+    <div class="note-panel" id="note-panel" hidden>
+      <div class="note-head">
+        <span>学习笔记（自动保存到本地）</span>
+        <button id="note-clear">清空</button>
+      </div>
+      <textarea id="note-area" placeholder="在这里记录你的思考、疑问、灵感...&#10;关闭后会保存到浏览器本地。"></textarea>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+<script data-minimax-analytics="minimax-website-analytics-v1">(function(){
+"use strict";
+var t="eyJ2IjoxLCJraWQiOiJwcmUtY24tMjAyNjA4MTUtdjEiLCJiaXpfaWQiOiJNYXZpcyIsIm5vZGVfaWQiOiI0MzkyMDk2ODkwMzg5MTIiLCJpc3N1ZWRfYXQiOjE3ODg3ODE3Mjc5OTR9.4SAek_sUjB7HH1HxCtvcUJH-Ay9acU-MKOOKQh2vDFQ",u="https://agent.minimax.cn/minimax-cloud/api/v1/website-traffic/page-views",last="";
+function path(){
+var h=window.location.hash||"",p=h.indexOf("#!")===0?h.slice(2):h.indexOf("#/")===0?h.slice(1):(window.location.pathname||"/");
+p=p.split(/[?#]/,1)[0]||"/";
+if(p.charAt(0)!=="/")p="/"+p;
+p=p.replace(/\/+/g,"/").replace(/%([0-9a-fA-F]{2})/g,function(_,x){var c=String.fromCharCode(parseInt(x,16));return /[A-Za-z0-9._~-]/.test(c)?c:"%"+x.toUpperCase();});
+if(p.length>1)p=p.replace(/\/+$/,"");
+return p||"/";
+}
+function send(){
+var p=path();if(p===last)return;last=p;
+var b="v=1&t="+encodeURIComponent(t)+"&p="+encodeURIComponent(p),ok=false;
+try{if(navigator.sendBeacon){ok=navigator.sendBeacon(u,new Blob([b],{type:"application/x-www-form-urlencoded;charset=UTF-8"}));}}catch(e){}
+if(!ok){try{fetch(u,{method:"POST",body:b,keepalive:true,mode:"no-cors",credentials:"omit",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}});}catch(e){}}
+}
+["pushState","replaceState"].forEach(function(n){var f=history[n];if(!f)return;history[n]=function(){var r=f.apply(this,arguments);setTimeout(send,0);return r;};});
+window.addEventListener("popstate",send);window.addEventListener("hashchange",send);send();
+})();</script>
+<style>
+#minimax-floating-ball {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 12px;
+  background: #222222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#minimax-floating-ball:hover {
+  transform: translateY(-2px);
+  background: #383838;
+}
+.minimax-ball-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minimax-logo-wave {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg%20preserveAspectRatio%3D%27none%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20overflow%3D%27visible%27%20style%3D%27display%3A%20block%3B%27%20viewBox%3D%270%200%20170.136%20138.225%27%20fill%3D%27none%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cg%20id%3D%27Frame%202116748449%27%3E%3Cpath%20id%3D%27Subtract%27%20d%3D%27M170%20101.783C170%20105.144%20168.49%20108.327%20165.886%20110.453L134.963%20135.702C132.964%20137.334%20130.463%20138.225%20127.883%20138.225H10.4938C4.69824%20138.225%200%20133.527%200%20127.732V39.2289C0%2035.8597%201.51758%2032.6698%204.13162%2030.5442L38.5402%202.56547C40.536%200.942662%2043.0298%200.0567377%2045.602%200.0567377H159.506C165.302%200.0567377%20170%204.75498%20170%2010.5506V101.783Z%27%20fill%3D%27black%27%20style%3D%27fill%3Ablack%3Bfill-opacity%3A1%3B%27/%3E%3Cpath%20id%3D%27Subtract_2%27%20d%3D%27M149.011%2094.4632C149.011%2096.1471%20148.253%2097.7415%20146.946%2098.8043L125.893%20115.936C124.895%20116.748%20123.648%20117.191%20122.361%20117.191H24.6479C22.716%20117.191%2021.15%20115.625%2021.15%20113.693V46.1166C21.15%2044.4267%2021.9135%2042.8274%2023.2274%2041.7648L47.367%2022.2437C48.3638%2021.4376%2049.607%2020.9982%2050.8888%2020.9988L145.514%2021.0427C147.446%2021.0436%20149.011%2022.6094%20149.011%2024.5406V94.4632Z%27%20fill%3D%27white%27%20style%3D%27fill%3Awhite%3Bfill-opacity%3A1%3B%27/%3E%3Cpath%20id%3D%27Rectangle%20111142564%27%20d%3D%27M42.111%2080.8025C42.111%2077.7115%2044.6167%2075.2057%2047.7077%2075.2057H60.9999C64.0908%2075.2057%2066.5966%2077.7115%2066.5966%2080.8025V121.029H42.111V80.8025Z%27%20fill%3D%27black%27%20style%3D%27fill%3Ablack%3Bfill-opacity%3A1%3B%27/%3E%3Cpath%20id%3D%27Rectangle%20111142567%27%20d%3D%27M79.1894%2080.8025C79.1894%2077.7115%2081.6952%2075.2057%2084.7861%2075.2057H98.0783C101.169%2075.2057%20103.675%2077.7115%20103.675%2080.8025V121.029H79.1894V80.8025Z%27%20fill%3D%27black%27%20style%3D%27fill%3Ablack%3Bfill-opacity%3A1%3B%27/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 11px;
+  background-color: #8FD1FF;
+  border-radius: 4px;
+}
+
+.minimax-ball-text {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.minimax-close-icon {
+  margin-left: 8px;
+  font-size: 16px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.minimax-close-icon:hover {
+  opacity: 1;
+}
+</style>
+<div id="minimax-floating-ball">
+  <div class="minimax-ball-content">
+    <div class="minimax-logo-wave"></div>
+    <span class="minimax-ball-text">Created by MiniMax Agent</span>
+  </div>
+  <div class="minimax-close-icon">×</div>
+</div>
+<script>
+// Initialize floating ball functionality
+function initFloatingBall() {
+  const ball = document.getElementById('minimax-floating-ball');
+  if (!ball) return;
+
+  // Initial animation
+  ball.style.opacity = '0';
+  ball.style.transform = 'translateY(20px)';
+
+  setTimeout(() => {
+    ball.style.opacity = '1';
+    ball.style.transform = 'translateY(0)';
+  }, 500);
+
+  // Handle logo click
+  const ballContent = ball.querySelector('.minimax-ball-content');
+  ballContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+    window.open('https://agent.minimax.cn/', '_blank');
+    ball.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      ball.style.transform = 'scale(1)';
+    }, 100);
+  });
+
+  // Handle close button click
+  const closeIcon = ball.querySelector('.minimax-close-icon');
+  closeIcon.addEventListener('click', function (e) {
+    e.stopPropagation();
+    ball.style.opacity = '0';
+    ball.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      ball.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initFloatingBall); 
+</script>
+</body>
+</html>
